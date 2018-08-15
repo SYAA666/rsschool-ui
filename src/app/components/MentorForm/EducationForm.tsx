@@ -45,7 +45,7 @@ class MentoringForm extends React.PureComponent<any, any> {
                     <Label className="field-required">How many students do you want to mentor?</Label>
                     <Field className="form-control" name="number" type="select" component={ReduxFormInput}>
                         <option value="">(Empty)</option>
-                        {NUMBER.map(num => <option key={num.id}>{num.number}</option>)}
+                        {NUMBER.map(num => <option key={num.id}>{num.numb}</option>)}
                     </Field>
                 </FormGroup>
             </div>,
