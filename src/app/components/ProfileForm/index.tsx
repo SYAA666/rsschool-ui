@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Button } from 'reactstrap';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import ContactsForm from './ContactsForm';
-import EducationForm from './EducationForm';
+import MentoringForm from './MentoringForm';
 import NamesForm from './NamesForm';
+import ExperienceForm from './EmploymentHistory';
 
 const ProfileForm = (props: InjectedFormProps) => {
     const { handleSubmit, pristine, submitting } = props;
@@ -17,7 +18,9 @@ const ProfileForm = (props: InjectedFormProps) => {
 
             <hr className="mb-5 mt-5" />
 
-            <EducationForm />
+            <ExperienceForm />
+            <hr className="mb-5 mt-5" />
+            <MentoringForm />
 
             <div className="row text-center">
                 <div className="form-group col-md-12">
@@ -31,5 +34,5 @@ const ProfileForm = (props: InjectedFormProps) => {
 };
 
 export default reduxForm({
-    form: 'profileForm',
+    form: 'mentoringForm',
 })(ProfileForm);

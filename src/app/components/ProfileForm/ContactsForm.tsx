@@ -2,20 +2,12 @@ import ReduxFormInput from 'components/ReduxFormInput';
 import * as React from 'react';
 import { FormGroup, InputGroup, InputGroupAddon, Label } from 'reactstrap';
 import { Field } from 'redux-form';
-import { CITIES } from '../../reference-data';
 import { emailFormatter, emailParser } from './parsers-formatters';
 
 class ContactsForm extends React.PureComponent<any, any> {
     render() {
         return [
             <div key="0" className="row">
-                <FormGroup className="col-md-6">
-                    <Label>City</Label>
-                    <Field name="city" type="select" component={ReduxFormInput}>
-                        <option value="">(Empty)</option>
-                        {CITIES.map(city => <option key={city.id}>{city.name}</option>)}
-                    </Field>
-                </FormGroup>
                 <FormGroup className="col-md-6">
                     <Label className="field-required">Phone (in the form 8-XXX-XXX-XX-XX)</Label>
                     <InputGroup className="mb-3">
@@ -40,6 +32,43 @@ class ContactsForm extends React.PureComponent<any, any> {
                         parse={emailParser}
                         placeholder="Email"
                         type="email"
+                        id="inputEmail4"
+                    />
+                </FormGroup>
+            </div>,
+            <div key="2" className="row">
+                <FormGroup className="col-md-12">
+                    <Label for="inputEmail5">Your nickname at Skype</Label>
+                    <Field
+                        type="text"
+                        name="skype"
+                        component={ReduxFormInput}
+                        id="inputEmail5"
+                        placeholder="ivan.ivanov"
+                    />
+                </FormGroup>
+            </div>,
+            <div key="3" className="row">
+                <FormGroup className="col-md-12">
+                    <Label for="inputEmail5">Your nickname at Telegram</Label>
+                    <Field
+                        type="text"
+                        name="telegram"
+                        id="inputEmail5"
+                        component={ReduxFormInput}
+                        placeholder="Messenger Name: @nickname"
+                    />
+                </FormGroup>
+            </div>,
+            <div key="4" className="row">
+                <FormGroup className="col-md-12">
+                    <Label for="input53">Other contat</Label>
+                    <Field
+                        type="text"
+                        component={ReduxFormInput}
+                        name="other"
+                        id="input53"
+                        placeholder="Messenger Name: @nickname"
                     />
                 </FormGroup>
             </div>,
