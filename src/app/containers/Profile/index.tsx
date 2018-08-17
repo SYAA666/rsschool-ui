@@ -10,6 +10,7 @@ type ProfileProps = {
     load: () => void;
     submit: (formData: any) => void;
     formData: any;
+    Data: any;
 };
 
 const mapStateToProps = (state: RootState, props: ProfileProps): ProfileProps => {
@@ -38,6 +39,7 @@ class Profile extends React.Component<ProfileProps> {
     }
 
     handleSubmit = (formData: any) => {
+        window.console.log(formData);
         this.props.submit(formData);
     };
 

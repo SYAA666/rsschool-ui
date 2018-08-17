@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'reactstrap';
+import { Button, Jumbotron } from 'reactstrap';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import ContactsForm from './ContactsForm';
 import MentoringForm from './MentoringForm';
@@ -10,8 +10,9 @@ const ProfileForm = (props: InjectedFormProps) => {
     const { handleSubmit, pristine, submitting } = props;
     return (
         <form onSubmit={handleSubmit}>
-            <NamesForm />
-
+            <Jumbotron>
+                <NamesForm />
+            </Jumbotron>
             <hr className="mb-5 mt-5" />
 
             <ContactsForm />

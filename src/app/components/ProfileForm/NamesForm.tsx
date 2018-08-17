@@ -1,6 +1,6 @@
 import ReduxFormInput from 'components/ReduxFormInput';
 import * as React from 'react';
-import { FormGroup, Label, Input } from 'reactstrap';
+import { FormGroup, Label } from 'reactstrap';
 import { Field } from 'redux-form';
 import { CITIES, T_SHIRT_SIZES } from '../../reference-data';
 
@@ -47,24 +47,26 @@ class NamesForm extends React.PureComponent<any, any> {
                     <Label>Gender</Label>
                     <div className="col-md-12">
                         <div className="form-check form-check-inline">
-                            <Input
+                            <Field
                                 className="form-check-input"
                                 id="inlineRadio8"
                                 type="radio"
                                 name="gender"
                                 value="male"
+                                component={ReduxFormInput}
                             />
                             <Label className="form-check-label" for="inlineRadio8">
                                 Male
                             </Label>
                         </div>
                         <div className="form-check form-check-inline">
-                            <Input
+                            <Field
                                 className="form-check-input"
                                 id="inlineRadio8"
                                 type="radio"
                                 name="gender"
                                 value="female"
+                                component={ReduxFormInput}
                             />
                             <Label className="form-check-label" for="inlineRadio8">
                                 Female
@@ -79,12 +81,13 @@ class NamesForm extends React.PureComponent<any, any> {
                     <div className="form-group col">
                         {T_SHIRT_SIZES.map(size => (
                             <div key={size.id} className="form-check form-check-inline">
-                                <Input
+                                <Field
                                     className="form-check-input"
                                     id="inlineRadio8"
                                     type="radio"
                                     name="size"
                                     value={size.name}
+                                    component={ReduxFormInput}
                                 />
                                 <Label className="form-check-label" for="inlineRadio8">
                                     {size.name}

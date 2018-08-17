@@ -1,6 +1,6 @@
 import ReduxFormInput from 'components/ReduxFormInput';
 import * as React from 'react';
-import { FormGroup, Label, Input } from 'reactstrap';
+import { FormGroup, Label } from 'reactstrap';
 import { Field } from 'redux-form';
 import { NUMBER } from '../../reference-data';
 
@@ -13,24 +13,26 @@ class MentoringForm extends React.PureComponent<any, any> {
                     <div className="row">
                         <FormGroup className="col-md-6">
                             <div className="form-check form-check-inline">
-                                <Input
+                                <Field
                                     className="form-check-input"
                                     type="radio"
-                                    name="tShirtSize"
+                                    name="mentoringTime"
                                     id="inlineRadio101"
-                                    value="option101"
+                                    value={15}
+                                    component={ReduxFormInput}
                                 />
                                 <Label className="form-check-label" for="inlineRadio101">
                                     Only second (&approx; 15 weeks)
                                 </Label>
                             </div>
                             <div className="form-check form-check-inline">
-                                <Input
+                                <Field
                                     className="form-check-input"
                                     type="radio"
-                                    name="tShirtSize"
+                                    name="mentoringTime"
                                     id="inlineRadio101"
-                                    value="option102"
+                                    value={22}
+                                    component={ReduxFormInput}
                                 />
                                 <Label className="form-check-label" for="inlineRadio102">
                                     Second & Third (&approx; 22 weeks)
